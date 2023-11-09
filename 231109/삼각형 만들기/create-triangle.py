@@ -25,8 +25,8 @@ for i in range(n - 2):
             x1, y1 = dots[i]
             x2, y2 = dots[j]
             x3, y3 = dots[k]
-
-            s = abs(x1*y2 + x2*y3 + x3*y1 - x2*y1 - x3*y2 - x1*y3)
-            if ans < s:
-                ans = s
+            if condition(x1, y1, x2, y2, x3, y3):
+                s = abs(x1*y2 + x2*y3 + x3*y1 - x2*y1 - x3*y2 - x1*y3)
+                if ans < s:
+                    ans = s
 print(s)
