@@ -7,7 +7,7 @@ int main() {
     b = 8.27;
 
     cout << fixed;
-    cout << precision(3);
+    cout.precision(3);
     cout << a * b;
     return 0;
 }
