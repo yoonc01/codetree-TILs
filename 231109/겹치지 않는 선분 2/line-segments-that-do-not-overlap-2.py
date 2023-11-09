@@ -10,10 +10,10 @@ for _ in range(n):
     points.append(list(map(int, input().split())))
 
 cnt = 0
-for i in range(n - 1):
+for i in range(n):
     x1, y1 = points[i]
     overlap = 0
-    for j in range(i + 1, n):
+    for j in range(n):
         x2, y2 = points[j]
         if (x2 - x1) * (y2 - y1) < 0:
             overlap = 1
