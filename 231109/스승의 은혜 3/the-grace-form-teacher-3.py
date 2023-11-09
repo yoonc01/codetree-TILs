@@ -27,4 +27,5 @@ for i in range(n):
         total = total + temp[j]
         if total > b:
             ans = max(ans, j)
+            break
 print(ans)
