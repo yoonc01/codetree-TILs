@@ -8,7 +8,7 @@ def par_y(x1, x2, x3):
     return (x1 == x2 or x2 == x3 or x3 == x1)
 
 def condition(x1, y1, x2, y2, x3, y3):
-    return (par_x(x1, x2, x3) and par_y(y1, y2, y3))
+    return (par_x(y1, y2, y3) and par_y(x1, x2, x3))
     
 n = int(input())
 
