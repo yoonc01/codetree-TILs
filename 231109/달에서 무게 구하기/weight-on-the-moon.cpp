@@ -8,6 +8,6 @@ int main() {
     cout << fixed;
     cout.precision(6);
 
-    coutu << w << " * " << g << " = " << w * g;
+    cout << w << " * " << g << " = " << w * g;
     return 0;
 }
