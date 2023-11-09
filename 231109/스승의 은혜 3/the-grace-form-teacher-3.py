@@ -15,13 +15,16 @@ info = [list(map(int, input().split())) for i in range(n)]
 ans = 0
 
 for i in range(n):
-    total = 0
+    temp = []
     for j in range(n):
         if j == i:
-            total = total + sum(info[j]) - info[j][0] // 2
+            temp.append(sum(info[j]) - info[j][0] // 2)
         else:
-            total = total + sum(info[j])
+            temp.append(sum(info[j]))
+    temp.sort()
+    total = 0
+    for j in range(n):
+        total = total + temp[j]
         if total > b:
             ans = max(ans, j)
-
 print(ans)
