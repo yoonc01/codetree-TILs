@@ -1,11 +1,11 @@
 def condition(sen):
-    l = []
+    d = {}
     for i in sen:
-        if i in l:
-            continue
+        if i in d:
+            d[i] = d[i] + 1
         else:
-            l.append(i)
-    if len(l) == 2:
+            d[i] = 1
+    if len(d) == 2 and 1 in d.values():
         return True
     return False
 
