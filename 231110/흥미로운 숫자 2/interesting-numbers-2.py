@@ -5,11 +5,9 @@ def condition(sen):
             continue
         else:
             l.append(i)
-            if len(l) >= 3:
-                return False
-    if len(l) == 1:
-        return False
-    return True
+    if len(l) == 2:
+        return True
+    return False
 
 x, y = map(int, input().split())
 
