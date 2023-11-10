@@ -7,7 +7,7 @@ n, c, g, h = map(int, input().split())
 def work(ta, tb, t):
     if t < ta:
         return c
-    elif ta <= t < tb:
+    elif ta <= t <= tb:
         return g
     else:
         return h
@@ -23,7 +23,7 @@ for _ in range(n):
     info.append([a, b])
 
 ans = -sys.maxsize
-for t in range(min_val - 1, max_val + 2):
+for t in range(min_val - 2, max_val + 2):
     total = 0
     for ta, tb in info:
         total = total + work(ta, tb, t)
