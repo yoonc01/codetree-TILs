@@ -8,7 +8,7 @@ int main() {
 
     temp = a;
     a = b;
-    b = a;
+    b = temp;
     cout << a << " " << b;
     return 0;
 }
