@@ -11,6 +11,8 @@ ans = 0
 for i in range(n):
     dis = n
     for seat in seats:
+        if i == seat:
+            continue
         dis = min(dis, abs(seat - i))
     ans = max(ans, dis)
 
