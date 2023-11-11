@@ -1,5 +1,3 @@
-import sys
-
 n = int(input())
 
 sen = input()
@@ -11,7 +9,7 @@ for i in range(len(sen)):
 
 ans = 0
 for i in range(n):
-    dis = sys.maxsize
+    dis = n
     for seat in seats:
         dis = min(dis, abs(seat - i))
     ans = max(ans, dis)
