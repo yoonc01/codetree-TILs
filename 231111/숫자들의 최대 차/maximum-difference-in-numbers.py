@@ -12,7 +12,7 @@ for _ in range(n):
 r = max(l)
 ans = 0
 for min_val in range(r + 1):
-    for max_val in range(min_val + 1, r + 1):
+    for max_val in range(min_val, r + 1):
         if max_val - min_val > k:
             break
         cnt = 0
