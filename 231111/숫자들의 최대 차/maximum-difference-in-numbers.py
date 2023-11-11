@@ -9,9 +9,10 @@ l = []
 for _ in range(n):
     l.append(int(input()))
 
+s = min(l)
 r = max(l)
 ans = 0
-for min_val in range(r + 1):
+for min_val in range(s, r + 1):
     for max_val in range(min_val, r + 1):
         if max_val - min_val > k:
             break
