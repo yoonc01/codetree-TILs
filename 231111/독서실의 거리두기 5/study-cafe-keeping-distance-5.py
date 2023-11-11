@@ -12,7 +12,7 @@ for i in range(n):
     dis = n
     check = False
     for seat in seats:
-        if i in seats:
+        if i == seat:
             continue
         dis = min(dis, abs(seat - i))
         check = True
