@@ -10,10 +10,13 @@ for i in range(len(sen)):
 ans = 0
 for i in range(n):
     dis = n
+    check = False
     for seat in seats:
-        if i == seat:
+        if i in seats:
             continue
         dis = min(dis, abs(seat - i))
-    ans = max(ans, dis)
+        check = True
+    if check:
+        ans = max(ans, dis)
 
 print(ans)
