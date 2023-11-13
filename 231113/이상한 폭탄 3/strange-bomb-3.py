@@ -24,8 +24,8 @@ for num in range(min_num, max_num + 1):
             else:
                 if idx - pre <= k:
                     cnt = cnt + 1
-                    ans = max(ans, cnt)
-                else:
-                    cnt = 0
+
             pre = idx
+    if ans < cnt:
+        ans = cnt
 print(ans)
