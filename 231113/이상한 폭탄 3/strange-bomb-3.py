@@ -21,7 +21,7 @@ for bomb in bombs:
     for i in range(len(d[bomb]) - 1):
         if d[bomb][i + 1] - d[bomb][i] <= k:
             cnt = cnt + 1
-    if max_val < cnt:
+    if max_val <= cnt:
         max_val = cnt
         ans = bomb
 print(ans)
