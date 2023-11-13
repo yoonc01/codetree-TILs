@@ -2,30 +2,26 @@ import sys
 
 input = sys.stdin.readline
 
+d = {}
 n, k = map(int, input().split())
-
-bombs = []
-min_num = sys.maxsize
-max_num = 0
-for _ in range(n):
+for i in range(n):
     bomb = int(input())
-    min_num = min(min_num, bomb)
-    max_num = max(max_num, bomb)
-    bombs.append(bomb)
 
+    if bomb in d:
+        d[bomb].append(i)
+    else:
+        d[bomb] = [i]
+
+max_val = 0
 ans = 0
-for num in range(min_num, max_num + 1):
-    first = True
+bombs = list(d.keys())
+bombs.sort()
+for bomb in bombs:
     cnt = 0
-    for idx, bomb in enumerate(bombs):
-        if bomb == num:
-            if first:
-                first = False
-            else:
-                if idx - pre <= k:
-                    cnt = cnt + 1
-
-            pre = idx
-    if ans < cnt:
-        ans = cnt
+    for i in range(len(d[bomb]) - 1):
+        if d[bomb][i + 1] - d[bomb][i] <= k:
+            cnt = cnt + 1
+    if max_val < cnt:
+        max_val = cnt
+        ans = bomb
 print(ans)
