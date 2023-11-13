@@ -13,7 +13,7 @@ for i in range(n):
         d[bomb] = [i]
 
 max_val = 0
-ans = -1
+ans = 0
 bombs = list(d.keys())
 bombs.sort()
 for bomb in bombs:
@@ -21,7 +21,7 @@ for bomb in bombs:
     for i in range(len(d[bomb]) - 1):
         if d[bomb][i + 1] - d[bomb][i] <= k:
             cnt = cnt + 1
-    if max_val <= cnt:
+    if cnt != 0 and max_val <= cnt:
         max_val = cnt
         ans = bomb
 print(ans if ans != -1 else 0)
