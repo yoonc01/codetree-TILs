@@ -2,6 +2,13 @@ n = int(input())
 
 l = list(map(int, input()))
 
+def cal(seats):
+    n = len(seats)
+    dis = n
+    for i in range(n):
+        for j in range(i + 1, n):
+            dis = min(dis, abs(seats[j] - seats[i]))
+    return dis
 seats = []
 for i in range(n):
     if l[i] == 1:
@@ -10,10 +17,12 @@ for i in range(n):
 ans = 0
 for i in range(n):
     for j in range(i + 1, n):
-        dis = n + 1
-        if j == i or i in seats or j in seats:
+        dis = n
+        if i in seats or j in seats:
             continue
-        for seat in seats:
-            dis = min(dis, abs(seat - j), abs(seat - i), abs(j - i))
-        ans = max(ans, dis)
+        seats.append(i)
+        seats.append(j)
+        ans = max(ans,cal(seats))
+        seats.pop()
+        seats.pop()
 print(ans)
