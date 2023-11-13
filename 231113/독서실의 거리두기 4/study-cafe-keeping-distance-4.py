@@ -1,28 +1,23 @@
-n = int(input())
-
-l = list(map(int, input()))
-
-def cal(seats):
-    n = len(seats)
-    dis = n
+def min_dist(seat):
+    dist = n
     for i in range(n):
         for j in range(i + 1, n):
-            dis = min(dis, abs(seats[j] - seats[i]))
-    return dis
-seats = []
-for i in range(n):
-    if l[i] == 1:
-        seats.append(i)
+            if seat[i] == '1' and seat[j] == '1':
+                dist = min(dist, j - i)
+    
+    return dist
+
+n = int(input())
+seat = list(input())
 
 ans = 0
 for i in range(n):
-    for j in range(i + 1, n):
-        dis = n
-        if i in seats or j in seats:
-            continue
-        seats.append(i)
-        seats.append(j)
-        ans = max(ans,cal(seats))
-        seats.pop()
-        seats.pop()
+    for j in range(i + 1, n):    
+        if seat[i] == '0' and seat[j] == '0':
+            seat[i] = '1'
+            seat[j] = '1'
+            ans = max(ans, min_dist(seat))
+            seat[i] = '0'
+            seat[j] = '0'
+
 print(ans)
