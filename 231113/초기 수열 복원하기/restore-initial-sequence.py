@@ -7,7 +7,7 @@ for i in range(1, l[0]):
     ans.append(i)
     for k in l:
         add = k - ans[-1]
-        if add in ans:
+        if add in ans or add == 0:
             find = False
             break
         ans.append(add)
