@@ -24,4 +24,4 @@ for bomb in bombs:
     if cnt != 0 and max_val <= cnt:
         max_val = cnt
         ans = bomb
-print(ans if ans != -1 else 0)
+print(ans)
