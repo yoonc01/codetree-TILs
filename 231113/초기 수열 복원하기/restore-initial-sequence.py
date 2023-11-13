@@ -15,6 +15,5 @@ for i in range(1, l[0]):
         print(" ".join(map(str, ans)))
         break
     else:
-        while(ans):
-            ans.pop()
+        ans = []
         continue
