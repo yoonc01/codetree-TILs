@@ -2,8 +2,11 @@
 using namespace std;
 
 int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
     int a, b;
-    scanf("%d-%d", &a, &b);
-    printf("%d%d", a, b);
+    char c;
+    cin >> a >> c >> b;
+    cout << a << b;
     return 0;
 }
