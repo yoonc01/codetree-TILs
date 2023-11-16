@@ -8,7 +8,7 @@ int main() {
         cin >> arr[i];
     }
     for (int i = 9; i >= 0; i--){
-        cin >> arr[i];
+        cout << arr[i];
     }
     return 0;
 }
