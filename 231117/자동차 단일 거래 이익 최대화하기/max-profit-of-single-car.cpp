@@ -6,7 +6,7 @@ int main(){
     int n, arr[1001];
     int max_val;
 
-    max_val = INT_MIN;
+    max_val = 0;
     cin >> n;
     for(int i = 0; i < n; i++)
         cin >> arr[i];
