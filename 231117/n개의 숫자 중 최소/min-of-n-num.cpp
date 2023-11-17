@@ -4,7 +4,11 @@ using namespace std;
 
 int main() {
     int n, num, cnt, min_val;
-    
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+ 
     cin >> n;
     min_val = INT_MAX;
     cnt = 0;
