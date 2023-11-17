@@ -1,22 +1,36 @@
 #include <iostream>
-#include <climits>
+
+#define MAX_NUM 1000
+
 using namespace std;
 
-int main(){
-    int n, arr[1001];
-    int max_val;
+int main() {
+    // 변수 선언:
+    int n;
+    int price[MAX_NUM];
 
-    max_val = 0;
+    // 입력:
     cin >> n;
     for(int i = 0; i < n; i++)
-        cin >> arr[i];
-    for(int i = 0; i < n - 1; i++)
-    {
-        for(int j = i + 1; j < n; j++)
-        {
-            if (arr[j] - arr[i] > max_val)
-                max_val = arr[j] - arr[i];
-        }
+        cin >> price[i];
+
+    // 배열을 앞에서부터 순회하며 최소값을 갱신해줍니다.
+    // 각 원소에 대하여 해당 시점의 최소값과의 차이가
+    // 최대가 될 때를 갱신해줍니다.
+    int max_profit = 0;
+    int min_price = price[0];
+    for(int i = 0; i < n; i++) {
+        int profit = price[i] - min_price;
+        
+        // 답을 갱신해줍니다.
+        if(profit > max_profit)
+            max_profit = profit;
+        
+        // 지금까지의 최솟값을 갱신해줍니다.
+        if(min_price > price[i])
+            min_price = price[i];
     }
-    cout << max_val;
+
+    cout << max_profit;
+    return 0;
 }
