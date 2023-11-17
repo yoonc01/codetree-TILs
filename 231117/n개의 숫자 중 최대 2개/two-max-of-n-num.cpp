@@ -7,6 +7,7 @@ int main() {
 
     cin >> n;
     first = INT_MIN;
+    second = INT_MIN;
     for(int i = 0; i < n; i++)
     {
         cin >> num;
