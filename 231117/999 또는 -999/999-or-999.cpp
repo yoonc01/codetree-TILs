@@ -12,9 +12,9 @@ int main() {
         cin >> n;
         if (n == -999 || n == 999)
             break;
-        else if (n > max_val)
+        if (n > max_val)
             max_val = n;
-        else if (n < min_val)
+        if (n < min_val)
             min_val = n;
     }
     cout << max_val << " " << min_val;
