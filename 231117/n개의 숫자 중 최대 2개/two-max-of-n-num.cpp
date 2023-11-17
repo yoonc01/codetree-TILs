@@ -1,22 +1,24 @@
 #include <iostream>
-#include <algorithm>
-#include <utility>
-
+#include <climits>
 using namespace std;
 
 int main() {
-    // 변수 선언: 
-    int A[100], n;
+    int n, num, first, second;
 
-    // 입력:
     cin >> n;
-    for (int i = 0; i < n; i++)
-        cin >> A[i];
-        
-    // 내림차순으로 정렬합니다.
-    sort(A, A+n, greater<int>()); 
-    
-    // 출력:
-    cout << A[0] << " " << A[1];
+    first = INT_MIN;
+    second = INT_MIN;
+    for(int i = 0; i < n; i++)
+    {
+        cin >> num;
+        if (num >= first)
+        {
+            second = first;
+            first = num;
+        }
+        else if (num > second)
+            second = num;
+    }
+    cout << first << " " << second;
     return 0;
 }
