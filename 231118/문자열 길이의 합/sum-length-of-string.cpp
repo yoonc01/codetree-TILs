@@ -11,11 +11,9 @@ int main(){
 	for (int i = 0; i < n; i++){
 		cin >> str;
 		len = len + str.length();
-		for (int j = 0; j < str.length(); j++)
-		{
-			if (str[j] == 'a')
-				cnt++;
-		}
+		if (str[0] == 'a')
+			cnt++;
+		
 	}
 	cout << len << ' ' << cnt;
 }
