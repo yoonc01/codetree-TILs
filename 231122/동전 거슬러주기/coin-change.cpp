@@ -18,7 +18,7 @@ int main() {
     
     for (int i = 1; i <= m; i++){
         for (int j = 0; j < n; j++){
-            if (i - coin[j] >= 0 && dp[i - coin[j]] != INT_MAX)
+            if (i - coin[j] >= 0 && dp[i - coin[j]] != INT_MAX) //아까는 파이썬이라 오버플로우 발생이 되지 않아서 문제가 없었던 듯 심지어 min으로 하고 있으니까 뒤의 조건을 추가시켜주는 게 맞다.
                 dp[i] = min(dp[i - coin[j]] + 1, dp[i]);
         }
     }
