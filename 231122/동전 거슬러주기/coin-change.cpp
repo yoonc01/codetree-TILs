@@ -23,7 +23,7 @@ int main() {
         }
     }
 
-    if (dp[m] != INT_MAX)
+    if (dp[m] != 100001)
         cout << dp[m];
     else
         cout << -1;
