@@ -14,7 +14,7 @@ int main() {
     
     dp[0] = 0;
     for(int i = 1; i <= m; i++)
-        dp[i] = INT_MAX;
+        dp[i] = 100001;
     
     for (int i = 1; i <= m; i++){
         for (int j = 0; j < n; j++){
@@ -22,6 +22,7 @@ int main() {
                 dp[i] = min(dp[i - coin[j]] + 1, dp[i]);
         }
     }
+
     if (dp[m] != INT_MAX)
         cout << dp[m];
     else
