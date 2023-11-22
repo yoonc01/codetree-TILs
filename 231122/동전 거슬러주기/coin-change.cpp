@@ -14,16 +14,16 @@ int main() {
     
     dp[0] = 0;
     for(int i = 1; i <= m; i++)
-        dp[i] = 100001;
+        dp[i] = INT_MAX;
     
     for (int i = 1; i <= m; i++){
         for (int j = 0; j < n; j++){
-            if (i - coin[j] >= 0)
+            if (i - coin[j] >= 0 && dp[i - coin[j]] != INT_MAX)
                 dp[i] = min(dp[i - coin[j]] + 1, dp[i]);
         }
     }
 
-    if (dp[m] != 100001)
+    if (dp[m] != INT_MAX)
         cout << dp[m];
     else
         cout << -1;
