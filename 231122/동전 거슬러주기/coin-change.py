@@ -8,7 +8,7 @@ dp[0] = 0
 
 for i in range(m + 1):
     for coin in coins:
-        if i - coin >= 0 and dp[i - coin] != sys.maxsize:
+        if i - coin >= 0:
             dp[i] = min(dp[i - coin] + 1, dp[i])
 
 print(dp[m] if dp[m] != sys.maxsize else -1)
