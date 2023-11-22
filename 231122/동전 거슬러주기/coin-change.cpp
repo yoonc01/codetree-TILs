@@ -14,7 +14,7 @@ int main() {
     
     dp[0] = 0;
     for(int i = 1; i <= m; i++)
-        dp[i] = INT_MAX;
+        dp[i] = m + 2;
     
     for (int i = 1; i <= m; i++){
         for (int j = 0; j < n; j++){
