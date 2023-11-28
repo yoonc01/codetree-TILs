@@ -1,19 +1,14 @@
-# 변수 선언 및 입력
 n = int(input())
 
-# 동적 배열 선언
-v = list()
+l = []
 
 for _ in range(n):
-    command = input()
-
-    if command.startswith("push_back"):
-        _, num = tuple(command.split())
-        v.append(int(num))
-    elif command.startswith("pop_back"):
-        v.pop()
-    elif command.startswith("size"):
-        print(len(v))
-    else:
-        _, index = tuple(command.split())
-        print(v[int(index) - 1])
+    cmd = list(input().split())
+    if cmd[0] == "push_back":
+        l.append(cmd[1])
+    elif cmd[0] == "pop_back":
+        l.pop()
+    elif cmd[0] == "size":
+        print(len(l))
+    elif cmd[0] == "get":
+        print(l[int(cmd[1]) - 1])
