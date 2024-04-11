@@ -10,6 +10,8 @@ for i in range(n):
         sum_val = sum_val + l[j + 1]
         j = j + 1
 
+    if sum_val < s:
+        break
     if sum_val >= s:
         ans = min(ans, j - i + 1)
     sum_val = sum_val - l[i]
