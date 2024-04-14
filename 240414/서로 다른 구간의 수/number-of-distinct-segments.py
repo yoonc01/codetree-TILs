@@ -1,27 +1,19 @@
 import sys
 
-input = sys.stdin.readline
+input =  sys.stdin.readline
 
 n = int(input())
-
 l = []
-
-for i in range(n):
+for _ in range(n):
     s, e = map(int, input().split())
-    l.append([i, s, 1])
-    l.append([i, e, -1])
-    
+    l.append([s, 1])
+    l.append([e, -1])
 
-l.sort(key = lambda x : x[1])
-
-left = set()
+l.sort()
 ans = 0
-for num, s, v in l:
-    if v == 1:
-        if not left:
-            ans = ans + 1
-        left.add(num)
-    else:
-        left.remove(num)
-    
+cnt = 0
+for x, score in l:
+    cnt = cnt + score
+    if score == 1 and cnt == 1:
+        ans = ans + 1
 print(ans)
