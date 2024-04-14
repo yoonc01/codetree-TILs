@@ -14,6 +14,6 @@ ans = 0
 cnt = 0
 for x, score in l:
     cnt = cnt + score
-    if score == 1 and cnt == 1:
+    if cnt == 1 and score == 1:
         ans = ans + 1
 print(ans)
