@@ -8,8 +8,8 @@ l = []
 
 for _ in range(n):
     s, e = map(int, input().split())
-    l.append([s, 1])
-    l.append([e, -1])
+    l.append((s, 1))
+    l.append((e, -1))
 
 l.sort()
 
