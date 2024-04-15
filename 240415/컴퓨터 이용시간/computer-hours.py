@@ -1,3 +1,4 @@
+from collections import deque
 import sys
 
 input = sys.stdin.readline
@@ -13,23 +14,21 @@ for i in range(n):
 
 l.sort()
 
-com = [0] * n
+q = deque()
+for i in range(1, n + 1):
+    q.append(i)
 
-ans = []
+d = {}
+
 for point, v, person in l:
     if v == 1:
-        for i in range(n):
-            if com[i] == 0:
-                com[i] = com[i] + person
-                ans.append((person, i + 1))
-                break
+        com = q.popleft()
+        d[person] = com
     else:
-        for i in range(n):
-            if com[i] == person:
-                com[i] = 0
-                break
+        q.appendleft(d[person])
 
-ans.sort()
+key_list = list(d.keys())
+key_list.sort()
 
-for person, i in ans:
-    print(i, end = " ")
+for i in key_list:
+    print(d[i], end = " ")
