@@ -23,4 +23,4 @@ for p, v in l:
         max_val = over_lap
     elif over_lap == max_val:
         cnt = cnt + 1
-print(cnt)
+print(max_val)
