@@ -16,7 +16,7 @@ l = []
 for _ in range(n):
     l.append(int(input().rstrip()))
 
-left = 0
+left = 1
 right = min(l)
 ans = 0
 
@@ -24,8 +24,9 @@ while(left <= right):
     mid = (left + right) // 2
     if cal(l, mid) >= m:
         left = mid + 1
-        ans = max(ans, mid)
-    else:
+        if cal(l, mid) == m:
+            ans = max(ans, mid)
+    elif cal(l, mid) < m:
         right = mid - 1
 
 print(ans)
