@@ -16,9 +16,9 @@ l = []
 for _ in range(n):
     l.append(int(input().rstrip()))
 
-left = 1
+left = 0
 right = min(l)
-ans = 1
+ans = 0
 
 while(left <= right):
     mid = (left + right) // 2
