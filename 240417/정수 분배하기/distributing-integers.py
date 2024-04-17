@@ -17,7 +17,7 @@ for _ in range(n):
     l.append(int(input().rstrip()))
 
 left = 0
-right = min(l)
+right = max(l)
 ans = 0
 
 while(left <= right):
