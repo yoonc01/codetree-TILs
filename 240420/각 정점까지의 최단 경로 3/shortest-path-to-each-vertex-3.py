@@ -32,4 +32,4 @@ for i in range(n):
         dist[j] = min(dist[j], dist[min_val] + G[min_val][j])
     
 for i in range(1, n):
-    print(dist[i])
+    print(dist[i] if dist[i] != sys.maxsize else -1)
