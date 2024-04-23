@@ -37,7 +37,7 @@ for _ in range(n):
 x = e - 1
 vertices = [x + 1]
 
-while x != 0:
+while x != s - 1:
     x = path[x]
     vertices.append(x + 1)
 
