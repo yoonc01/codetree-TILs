@@ -7,12 +7,17 @@ n = int(input())
 G = [list(map(int, input().split())) for _ in range(n)]
 visited = [[False for _ in range(n)] for _ in range(n)]
 
-def is_possible(a, b):
+def is_possible_row(a):
     for i in range(n):
-        if visited[a][i] or visited[i][b]:
+        if visited[a][i]:
             return False
     return True
 
+def is_possible_col(b):
+    for i in range(n):
+        if visited[i][b]:
+            return False
+    return True
 ans = 0
 
 def backtrack(l, num):
@@ -25,8 +30,10 @@ def backtrack(l, num):
         return
     
     for i in range(n):
+        if not is_possible_row(i):
+            continue
         for j in range(n):
-            if not is_possible(i, j):
+            if not is_possible_col(j):
                 continue
             visited[i][j] = True
             l.append((i, j))
