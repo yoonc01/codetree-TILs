@@ -5,42 +5,22 @@ input = sys.stdin.readline
 n = int(input())
 
 G = [list(map(int, input().split())) for _ in range(n)]
-visited = [[False for _ in range(n)] for _ in range(n)]
+col_visited = [False] * n
 
-def is_possible_row(a):
-    for i in range(n):
-        if visited[a][i]:
-            return False
-    return True
-
-def is_possible_col(b):
-    for i in range(n):
-        if visited[i][b]:
-            return False
-    return True
 ans = 0
 
-def backtrack(l, num):
+def backtrack(i, total):
     global ans
-    if num == 0:
-        total = 0
-        for a, b in l:
-            total = total + G[a][b]
+    if i == n:
         ans = max(ans, total)
         return
     
-    for i in range(n):
-        if not is_possible_row(i):
-            continue
-        for j in range(n):
-            if not is_possible_col(j):
-                continue
-            visited[i][j] = True
-            l.append((i, j))
-            backtrack(l, num - 1)
-            l.pop()
-            visited[i][j] = False
+    for j in range(n):
+        if not col_visited[j]:
+            col_visited[j] = True
+            backtrack(i + 1, total + G[i][j])
+            col_visited[j] = False
 
-backtrack([], n)
+backtrack(0, 0)
 
 print(ans)
