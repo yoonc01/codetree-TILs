@@ -2,7 +2,7 @@ n, m, k = map(int, input().split())
 
 dist = list(map(int, input().split()))
 
-horse = [0] * n
+horse = [1] * n
 ans = 0
 def backtrack(num):
     global ans
@@ -12,7 +12,7 @@ def backtrack(num):
         if i >= m:
             total = total + 1
     ans = max(ans, total)
-    
+
     if num == n:
         return
 
