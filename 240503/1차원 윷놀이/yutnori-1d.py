@@ -6,12 +6,14 @@ horse = [0] * n
 ans = 0
 def backtrack(num):
     global ans
+
+    total = 0
+    for i in horse:
+        if i >= m:
+            total = total + 1
+    ans = max(ans, total)
+    
     if num == n:
-        total = 0
-        for i in horse:
-            if i >= m:
-                total = total + 1
-        ans = max(ans, total)
         return
 
     for i in range(k):
