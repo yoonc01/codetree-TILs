@@ -10,4 +10,4 @@ for i in l:
         if j - i >= 0 and dp[j - i] != m + 1:
             dp[j] = min(dp[j], dp[j - i] + 1)
 
-print(dp[m])
+print(dp[m] if dp[m] != m + 1 else -1)
