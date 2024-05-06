@@ -25,6 +25,10 @@ for i in range(1, n + 1):
         if j - w >= 0 and dp[i - 1][j - w] != -1:
             dp[i][j] = max(dp[i][j], dp[i - 1][j - w] + v)
 
+        if dp[i - 1][j] != -1:
+            dp[i][j] = max(dp[i][j], dp[i - 1][j])
+
         ans = max(ans, dp[i][j])
+
 
 print(ans)
