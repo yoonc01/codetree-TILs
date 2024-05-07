@@ -19,7 +19,7 @@ dist[s - 1] = 0
 heap = []
 heapq.heappush(heap, (0, s - 1))
 
-path = [[s] for _ in range(n)]
+closer = [0 for _ in range(n)]
 
 while(heap):
     min_dist, min_idx = heapq.heappop(heap)
@@ -30,8 +30,16 @@ while(heap):
         new_dist = dist[min_idx] + cost
         if dist[to_idx] > new_dist:
             dist[to_idx] = new_dist
-            path[to_idx] = path[min_idx] + [to_idx + 1]
+            closer[to_idx] = min_idx
             heapq.heappush(heap, (new_dist, to_idx))
 
+x = e - 1
+
+path = [e]
+
+while x != s - 1:
+    x = closer[x]
+    path.append(x + 1)
+
 print(dist[e - 1])
-print(" ".join(map(str, path[e - 1])))
+print(" ".join(map(str, path[::-1])))
