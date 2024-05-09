@@ -1,12 +1,10 @@
-a, b, c = map(int, input().split())
+l = list(map(int, input().split()))
 
-if abs(a - b) == 1 and abs(b - c) == 1:
+l.sort()
+
+if l[1] - 1 == l[0] and l[2] - 1 == l[1]:
     print(0)
-elif abs(a - c) == 1 and abs(b - c) == 1:
-    print(0)
-elif abs(b - a) == 1 and abs(c - a) == 1:
-    print(0)
-elif abs(a - b) == 2 or abs(b - c) == 2 or abs(c - a) == 2:
+elif l[1] - 2 == l[0] or l[2] - 2 == l[1]:
     print(1)
 else:
     print(2)
