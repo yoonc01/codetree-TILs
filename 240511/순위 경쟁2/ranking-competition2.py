@@ -17,7 +17,7 @@ for _ in range(n):
     if top != "A" and d["A"] > d["B"]:
         ans = ans + 1
         top = "A"
-    elif top != "A and B" and d["A"] == d["B"]:
+    elif top != "" and top != "A and B" and d["A"] == d["B"]:
         ans = ans + 1
         top = "A and B"
     elif top != "B" and d["B"] > d["A"]:
