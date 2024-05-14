@@ -14,7 +14,7 @@ int main() {
         {
             if (j < i)
                 cout << "* ";
-            else if (j >= i)
+            else if (j > i)
                 cout << "  ";
         }
         cout <<"*\n";
