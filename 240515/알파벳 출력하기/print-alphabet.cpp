@@ -10,7 +10,7 @@ int main() {
     {
         for (int j = 0; j < i + 1; j++)
             cout << (char) ((c++ - 'A') % 26 + 'A');
-        cout << '\n';
+        cout << endl;
     }
     return 0;
 }
