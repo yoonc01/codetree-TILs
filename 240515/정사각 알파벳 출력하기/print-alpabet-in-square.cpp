@@ -3,7 +3,7 @@ using namespace std;
 
 int main() {
     int n;
-    char c = 'A';
+    char c = 65;
 
     cin >> n;
     for (int i = 0; i < n; i++)
