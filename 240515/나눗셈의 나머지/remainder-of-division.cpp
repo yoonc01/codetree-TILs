@@ -5,7 +5,7 @@ int main() {
     int a, b, arr[11] = {};
     int ans = 0;
     cin >> a >> b;
-    while (a)
+    while (1 < a)
     {
         arr[a % b]++;
         a = a / b;
