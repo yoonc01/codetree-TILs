@@ -9,10 +9,7 @@ int main() {
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < i + 1; j++)
-        {
-            cout << (char) ((c - 65) % 27 + 65);
-            c++;
-        }
+            cout << (char) ((c++ - 'A') % 26 + 'A');
         cout << '\n';
     }
     return 0;
