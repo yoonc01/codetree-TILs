@@ -1,17 +1,17 @@
-from collections import deque
+import heapq
 
 n = int(input())
 
-l = list(map(int, input().split()))
+heap = list(map(int, input().split()))
 
-l.sort()
-
-q = deque(l)
+heapq.heapify(heap)
 ans = 0
+
 while(n > 1):
-    a = q.popleft()
-    b = q.popleft()
+    a = heapq.heappop(heap)
+    b = heapq.heappop(heap)
     ans = ans + a + b
-    q.append(a + b)
+    heapq.heappush(heap, a + b)
     n = n - 1
+
 print(ans)
