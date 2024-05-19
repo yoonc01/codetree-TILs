@@ -12,7 +12,7 @@ int main() {
     while(1)
     {
         bool exists = false;
-        for (int i = 0; i < len_a - len_b; i++)
+        for (int i = 0; i < len_a - len_b + 1; i++)
         {
             if (a.substr(i, len_b) == b)
             {
