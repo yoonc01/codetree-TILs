@@ -3,10 +3,12 @@
 using namespace std;
 
 int main() {
-    string str;
-
+    string str, ans = "";
     cin >> str;
-    str = str.substr(1, str.length() - 1) + str[0];
-    cout << str;
+    int len = str.length();
+    for (int i = 1; i < len; i++)
+        ans = ans + str[i];
+    ans = ans + str[0];
+    cout << ans;
     return 0;
 }
