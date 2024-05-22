@@ -8,7 +8,7 @@ int arr[1000];
 
 int get_max_val(int n)
 {
-    int max_val = 2000;
+    int max_val = 0;
     for (int i = 0; i < n; i++)
         max_val = max(max_val, arr[i] + arr[2 * n - 1 - i]);
     
