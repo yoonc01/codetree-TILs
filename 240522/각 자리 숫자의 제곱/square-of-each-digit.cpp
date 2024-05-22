@@ -5,7 +5,7 @@ int seq(int n)
 {
     if (n < 10)
         return (n * n);
-    return (seq(n - 1) + n * n);
+    return (seq(n / 10) + (n % 10) * (n % 10));
 }
 
 int main() {
