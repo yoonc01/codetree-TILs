@@ -4,7 +4,7 @@
 using namespace std;
 
 int n;
-int arr[1000];
+int arr[3000];
 
 int get_max_val(int n)
 {
