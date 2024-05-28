@@ -1,5 +1,5 @@
+from collections import deque
 import sys
-sys.setrecursionlimit(10000)
 
 input = sys.stdin.readline
 
@@ -13,38 +13,36 @@ for _ in range(n - 1):
     s, e, w = map(int, input().split())
     G[s - 1].append((e - 1, w))
     G[e - 1].append((s - 1, w))
-    
-order = 0
 
-def dfs(x):
-    global order
+def bfs(s):
+    q = deque()
+    q.append((s, 0))
+    visited[s] = True
 
-    for to_idx, to_dist in G[x]:
-        if not visited[to_idx]:
-            order = order + to_dist
-            dist[to_idx] = order
-            visited[to_idx] = True
-            dfs(to_idx)
-            order = order - to_dist
+    while(q):
+        x, w = q.popleft()
+        for to_idx, to_dist in G[x]:
+            if not visited[to_idx]:
+                visited[to_idx] = True
+                dist[to_idx] = w + to_dist
+                q.append((to_idx, dist[to_idx]))
 
-visited[0] = True
-dfs(0)
-max_val = 0
-max_idx = 0
-for i, value in enumerate(dist):
-    if value > max_val:
-        max_val = value
+bfs(0)
+max_val = -1
+max_idx = -1
+for i, v in enumerate(dist):
+    if v > max_val:
+        max_val = v
         max_idx = i
 
 visited = [False for _ in range(n)]
 dist = [0 for _ in range(n)]
-order = 0
-visited[max_idx] = True
-dfs(max_idx)
-
-for i, value in enumerate(dist):
-    if value > max_val:
-        max_val = value
+bfs(max_idx)
+max_val = -1
+max_idx = -1
+for i, v in enumerate(dist):
+    if v > max_val:
+        max_val = v
         max_idx = i
 
 print(max_val)
