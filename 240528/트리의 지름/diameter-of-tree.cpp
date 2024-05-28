@@ -6,12 +6,12 @@
 
 using namespace std;
 
-int n, order;
+int n;
 vector<pair<int, int>> G[100000];
 bool visited[100000];
 int dist[100000];
 
-void    dfs(int x)
+void    dfs(int x, int d)
 {
     for (int i = 0; i < G[x].size(); i++)
     {
@@ -19,18 +19,16 @@ void    dfs(int x)
         tie(node, w) = G[x][i];
         if (!visited[node])
         {
-            order = order + w;
-            dist[node] = order;
+            dist[node] = d + w;
             visited[node] = true;
-            dfs(node);
-            order = order - w;
+            dfs(node, dist[node]);
         }
     }
 }
 
 int main() {
     cin >> n;
-    for (int i = 0; i < n - 1; i++)
+    for(int i = 0; i < n - 1; i++)
     {
         int s, e, w;
         cin >> s >> e >> w;
@@ -39,8 +37,7 @@ int main() {
     }
 
     visited[0] = true;
-    order = 0;
-    dfs(0);
+    dfs(0, 0);
     
     int max_val = -1, max_idx = -1;
     for (int i = 0; i < n; i++)
@@ -59,8 +56,7 @@ int main() {
     }
 
     visited[max_idx] = true;
-    order = 0;
-    dfs(max_idx);
+    dfs(max_idx, 0);
 
     max_val = -1;
     max_idx = -1;
