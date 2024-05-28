@@ -11,17 +11,27 @@ vector<pair<int, int>> G[100000];
 bool visited[100000];
 int dist[100000];
 
-void    dfs(int x, int d)
+void    bfs(int s)
 {
-    for (int i = 0; i < G[x].size(); i++)
+    queue <pair<int, int>> q;
+    visited[s] = true;
+    dist[s] = 0;
+    q.push(make_pair(s, 0));
+    while(!q.empty())
     {
-        int node, w;
-        tie(node, w) = G[x][i];
-        if (!visited[node])
+        int x, w;
+        tie(x, w) = q.front();
+        q.pop();
+        for (int i = 0; i < G[x].size(); i++)
         {
-            dist[node] = d + w;
-            visited[node] = true;
-            dfs(node, dist[node]);
+            int to_idx, to_dist;
+            tie(to_idx, to_dist) = G[x][i];
+            if (!visited[to_idx])
+            {
+                visited[to_idx] = true;
+                dist[to_idx] = w + to_dist;
+                q.push(make_pair(to_idx, dist[to_idx]));
+            }
         }
     }
 }
@@ -36,9 +46,7 @@ int main() {
         G[e - 1].push_back(make_pair(s - 1, w));
     }
 
-    visited[0] = true;
-    dfs(0, 0);
-    
+    bfs(0);    
     int max_val = -1, max_idx = -1;
     for (int i = 0; i < n; i++)
     {
@@ -55,9 +63,7 @@ int main() {
         visited[i] = false;
     }
 
-    visited[max_idx] = true;
-    dfs(max_idx, 0);
-
+    bfs(max_idx);
     max_val = -1;
     max_idx = -1;
     for (int i = 0; i < n; i++)
