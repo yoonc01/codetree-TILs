@@ -7,7 +7,7 @@ n = int(input())
 
 parents = list(map(int, input().split()))
 
-node = int(input())
+delete = int(input())
 
 G = [[] for _ in range(n)]
 
@@ -15,22 +15,19 @@ for child, parent in enumerate(parents):
     if parent == -1:
         start = child
         continue
+    elif parent == delete or child == delete:
+        continue
     G[parent].append(child)
 
 visited = [False for _ in range(n)]
 
 def bfs(s):
-    if len(G[parents[node]]) == 1:
-        cnt = 1
-    else:
-        cnt = 0
+    cnt = 0
     visited[s] = True
     q = deque()
     q.append(s)
     while(q):
         x = q.popleft()
-        if x == node:
-            continue
         if len(G[x]) == 0:
             cnt = cnt + 1
         else:
@@ -39,6 +36,4 @@ def bfs(s):
                     visited[child] = True
                     q.append(child)
     return cnt
-
-
 print(bfs(start))
