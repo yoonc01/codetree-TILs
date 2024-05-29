@@ -20,7 +20,10 @@ for child, parent in enumerate(parents):
 visited = [False for _ in range(n)]
 
 def bfs(s):
-    cnt = 0
+    if len(G[parents[node]]) == 1:
+        cnt = 1
+    else:
+        cnt = 0
     visited[s] = True
     q = deque()
     q.append(s)
@@ -28,12 +31,14 @@ def bfs(s):
         x = q.popleft()
         if x == node:
             continue
-        for child in G[x]:
-            if not visited[child]:
-                visited[child] = True
-                q.append(child)
         if len(G[x]) == 0:
             cnt = cnt + 1
+        else:
+            for child in G[x]:
+                if not visited[child]:
+                    visited[child] = True
+                    q.append(child)
     return cnt
+
 
 print(bfs(start))
