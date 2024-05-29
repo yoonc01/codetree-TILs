@@ -9,9 +9,6 @@ parents = list(map(int, input().split()))
 
 node = int(input())
 
-d = set()
-d.add(node)
-
 G = [[] for _ in range(n)]
 
 for child, parent in enumerate(parents):
@@ -22,8 +19,6 @@ for child, parent in enumerate(parents):
 
 visited = [False for _ in range(n)]
 
-parents = [-1 for _ in range(n)]
-
 def bfs(s):
     cnt = 0
     visited[s] = True
@@ -31,20 +26,14 @@ def bfs(s):
     q.append(s)
     while(q):
         x = q.popleft()
-        if x in d:
-            for child in G[x]:
-                if not visited[child]:
-                    visited[child] = True
-                    d.add(child)
-                    q.append(child)
-        else:
-            for child in G[x]:
-                if not visited[child]:
-                    visited[child] = True
-                    q.append(child)
-                    parents[child] = x
-            if len(G[x]) == 0:
-                cnt = cnt + 1
+        if x == node:
+            continue
+        for child in G[x]:
+            if not visited[child]:
+                visited[child] = True
+                q.append(child)
+        if len(G[x]) == 0:
+            cnt = cnt + 1
     return cnt
 
 print(bfs(start))
