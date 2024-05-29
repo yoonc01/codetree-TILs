@@ -36,4 +36,8 @@ def bfs(s):
                     visited[child] = True
                     q.append(child)
     return cnt
-print(bfs(start))
+
+if parents[delete] == -1:
+    print(0)
+else:
+    print(bfs(start))
