@@ -19,25 +19,22 @@ for child, parent in enumerate(parents):
         continue
     G[parent].append(child)
 
-visited = [False for _ in range(n)]
-
 def bfs(s):
+    if s == delete:
+        return 0
     cnt = 0
-    visited[s] = True
     q = deque()
     q.append(s)
     while(q):
         x = q.popleft()
-        if len(G[x]) == 0:
+        is_leaf = True
+        for child in G[x]:
+            if child == delete:
+                continue
+            q.append(child)
+            is_leaf = False
+        if (is_leaf):
             cnt = cnt + 1
-        else:
-            for child in G[x]:
-                if not visited[child]:
-                    visited[child] = True
-                    q.append(child)
     return cnt
 
-if parents[delete] == -1:
-    print(0)
-else:
-    print(bfs(start))
+print(bfs(start))
