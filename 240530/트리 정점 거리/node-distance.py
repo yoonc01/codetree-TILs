@@ -8,8 +8,6 @@ n, m = map(int, input().split())
 G = [[] for _ in range(n)]
 
 def bfs(s, e):
-    visited = [False for _ in range(n)]
-    visited[s] = True
     q = deque()
     q.append((s, 0))
     while(q):
