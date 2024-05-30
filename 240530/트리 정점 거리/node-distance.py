@@ -8,14 +8,18 @@ n, m = map(int, input().split())
 G = [[] for _ in range(n)]
 
 def bfs(s, e):
+    visited = [False for _ in range(n)]
+    visited[s] = True
     q = deque()
     q.append((s, 0))
     while(q):
         x, w = q.popleft()
         for to_idx, to_dist in G[x]:
-            if to_idx == e:
-                return w + to_dist
-            q.append((to_idx, w + to_dist))
+            if not visited[to_idx]:
+                visited[to_idx] = True
+                if to_idx == e:
+                    return w + to_dist
+                q.append((to_idx, w + to_dist))
 
 for _ in range(n - 1):
     s, e, w = map(int, input().split())
