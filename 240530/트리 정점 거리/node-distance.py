@@ -14,11 +14,11 @@ def bfs(s, e):
     q.append((s, 0))
     while(q):
         x, w = q.popleft()
+        if x == e:
+            return w
         for to_idx, to_dist in G[x]:
             if not visited[to_idx]:
                 visited[to_idx] = True
-                if to_idx == e:
-                    return w + to_dist
                 q.append((to_idx, w + to_dist))
 
 for _ in range(n - 1):
