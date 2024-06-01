@@ -43,17 +43,17 @@ int main() {
         if (diff % 7 == 0)
             cout << "Mon";
         else if (diff % 7 == -1)
-            cout << "Tue";
-        else if (diff % 7 == -2)
-            cout << "Wed";
-        else if (diff % 7 == -3)
-            cout << "Thu";
-        else if (diff % 7 == -4)
-            cout << "Fri";
-        else if (diff % 7 == -5)
-            cout << "Sat";
-        else
             cout << "Sun";
+        else if (diff % 7 == -2)
+            cout << "Sat";
+        else if (diff % 7 == -3)
+            cout << "Fri";
+        else if (diff % 7 == -4)
+            cout << "Thu";
+        else if (diff % 7 == -5)
+            cout << "Wed";
+        else
+            cout << "Tue";
     }
     return 0;
 }
