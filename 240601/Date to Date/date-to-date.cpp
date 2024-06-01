@@ -2,33 +2,23 @@
 
 using namespace std;
 
+int days_of_month[13] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 int m1, d1, m2, d2;
-int ans = 1;
 
-int main() {
-    cin >> m1 >> d1 >> m2 >> d2;
-    while(1)
+int total_days(int m, int d)
+{
+    int ans = 0;
+    for (int i = 0; i < m; i++)
     {
-        if (m1 == m2 && d1 == d2)
-            break;
-        if (m1 == 2 && d1 == 28)
-        {
-            m1 = 3;
-            d1 = 0;
-        }
-        else if (((m1 <= 6 && m1 % 2 == 0) || (m1 >= 9 && m1 % 2 == 1)) && d1 == 30)
-        {
-            m1 = m1 + 1;
-            d1 = 0;
-        }
-        else if (((m1 <= 6 && m1 % 2 == 1) || (m1 >= 9 && m1 % 2 == 0)) && d1 == 31)
-        {
-            m1++;
-            d1 = 0;
-        }
-        d1++;
-        ans++;
+        ans = ans + days_of_month[i];
     }
-    cout << ans;
+    ans = ans + d;
+    return (ans);
+}
+int main() {
+
+    cin >> m1 >> d1 >> m2 >> d2;
+    
+    cout << total_days(m2, d2) - total_days(m1, d1) + 1;
     return 0;
 }
