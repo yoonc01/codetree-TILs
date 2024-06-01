@@ -21,19 +21,39 @@ int main() {
 
     int diff = total_days(m2, d2) - total_days(m1, d1);
 
-    if (diff % 7 == 0)
-        cout << "Mon";
-    else if (diff % 7 == 1)
-        cout << "Tue";
-    else if (diff % 7 == 2)
-        cout << "Wed";
-    else if (diff % 7 == 3)
-        cout << "Thu";
-    else if (diff % 7 == 4)
-        cout << "Fri";
-    else if (diff % 7 == 5)
-        cout << "Sat";
+    if (diff >= 0)
+    {
+        if (diff % 7 == 0)
+            cout << "Mon";
+        else if (diff % 7 == 1)
+            cout << "Tue";
+        else if (diff % 7 == 2)
+            cout << "Wed";
+        else if (diff % 7 == 3)
+            cout << "Thu";
+        else if (diff % 7 == 4)
+            cout << "Fri";
+        else if (diff % 7 == 5)
+            cout << "Sat";
+        else
+            cout << "Sun";
+    }
     else
-        cout << "Sun";
+    {
+        if (diff % 7 == 0)
+            cout << "Mon";
+        else if (diff % 7 == 1)
+            cout << "Sun";
+        else if (diff % 7 == 2)
+            cout << "Sat";
+        else if (diff % 7 == 3)
+            cout << "Fri";
+        else if (diff % 7 == 4)
+            cout << "Thu";
+        else if (diff % 7 == 5)
+            cout << "Wed";
+        else
+            cout << "Tue";
+    }
     return 0;
 }
