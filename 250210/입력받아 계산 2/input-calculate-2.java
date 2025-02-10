@@ -10,7 +10,7 @@ public class Main {
         int a, b;
         a = Integer.parseInt(st.nextToken());
         b = Integer.parseInt(st.nextToken());
-        bw.append(String.format("%d", a + b));
+        bw.append(String.format("%d", a * b));
         bw.flush();
         bw.close();
     }
