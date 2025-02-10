@@ -1,7 +1,6 @@
 const fs = require("fs");
-const inputs = fs.readFileSync(0).toString().trim().split("\n");
+const input = fs.readFileSync(0).toString().trim().split("\n");
+let inputIndex = 0;
 
-for (let line of inputs) {
-    const [a, b] = line.split(" ").map(Number);
-    console.log(a * b);    
-}
+const [a, b] = input[inputIndex++].split(" ").map(Number);
+console.log(a * b);
