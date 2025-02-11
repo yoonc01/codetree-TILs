@@ -2,5 +2,6 @@ import sys
 
 input = sys.stdin.readline
 
-string = input()
-print(2 * string)
+string = input().split()
+print(string)
+print(string)
