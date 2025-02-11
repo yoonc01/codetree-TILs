@@ -3,7 +3,7 @@ using namespace std;
 
 int main() {
     ios::sync_with_stdio(false);
-    cie.tie(NULL);
+    cin.tie(NULL);
 
     int a, b;
 
