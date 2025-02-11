@@ -2,5 +2,5 @@ import sys
 
 input = sys.stdin.readline
 
-numbers = list(input().split())
+numbers = input().split()
 print("".join(numbers[::-1]))
