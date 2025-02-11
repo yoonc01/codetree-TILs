@@ -6,8 +6,10 @@ int main() {
     cin.tie(NULL);
 
     int h, m;
-    cin >> h >> m;
+    cin >> h;
+    cin.get();
+    cin >> m;
     h++;
-    cout << h <<":" << m << endl;
+    cout << h << ":" << m << endl;
     return 0;
 }
