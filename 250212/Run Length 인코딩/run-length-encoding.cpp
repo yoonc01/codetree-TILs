@@ -17,13 +17,12 @@ int main() {
         char current = str[idx];
         int count = 0;
 
-        while (str[idx] == current) {
+        while (idx < str.length() && str[idx] == current) {
             idx++;
             count++;
         }
 
-        result += current;
-        result += to_string(count);
+        result.append(1, current).append(to_string(count));
     }
 
     cout << result.length() << "\n" << result << "\n";
