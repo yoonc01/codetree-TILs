@@ -3,17 +3,22 @@ import sys
 input = sys.stdin.readline
 
 string = input().strip()
+n = len(string)
 
 idx = 0
-n = len(string)
-result = ""
-while(idx < n):
-    current = string[idx]
-    cnt = 0
-    while (idx < n and current == string[idx]):
-        idx = idx + 1
-        cnt = cnt + 1
-    result = result + current + str(cnt)
+result = []
 
-print(len(result))
-print(result)
+while idx < n:
+    char = string[idx]
+    count = 0
+
+    while idx < n and string[idx] == char:
+        idx += 1
+        count += 1
+
+    result.append(char + str(count))
+
+compressed_string = "".join(result)
+
+print(len(compressed_string))
+print(compressed_string)
