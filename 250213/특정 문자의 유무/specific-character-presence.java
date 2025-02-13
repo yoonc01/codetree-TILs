@@ -8,18 +8,11 @@ public class Main {
         StringBuilder sb = new StringBuilder();
         
         String str = br.readLine();
-        if (str.contains("ee")) {
-            sb.append("Yes ");
-        } else {
-            sb.append("No ");
-        }
-        
-        if (str.contains("ab")) {
-            sb.append("Yes ");
-        } else {
-            sb.append("No ");
-        }
-        
+
+        String ee = str.contains("ee") ? "Yes" : "No";
+        String ab = str.contains("ab") ? "Yes" : "No";
+
+        sb.append(ee).append(" ").append(ab);
         bw.write(sb.toString());
         bw.close();
     }
