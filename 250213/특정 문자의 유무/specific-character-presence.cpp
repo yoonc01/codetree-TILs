@@ -1,25 +1,18 @@
-#include <string>
 #include <iostream>
+#include <string>
+
 using namespace std;
 
 int main() {
     ios::sync_with_stdio(false);
-    cin.tie(NULL);
+    cin.tie(nullptr);
 
     string str;
-    string ans = "";
     cin >> str;
 
-    if (str.find("ee") != string::npos) {
-        ans.append("Yes ");
-    } else {
-        ans.append("No ");
-    }
-    if (str.find("ab") != string::npos) {
-        ans.append("Yes ");
-    } else {
-        ans.append("No ");
-    }
-    cout << ans;
+    string ee = (str.find("ee") != string::npos) ? "Yes" : "No";
+    string ab = (str.find("ab") != string::npos) ? "Yes" : "No";
+
+    cout << ee << " " << ab << "\n";
     return 0;
 }
