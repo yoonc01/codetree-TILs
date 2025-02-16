@@ -6,3 +6,6 @@
 
 ## 문자열 내의 문자열 위치 찾기
 [문자열 위치 찾기](https://github.com/yoonc01/codetree-TILs/tree/main/250213/%EB%B6%80%EB%B6%84%EB%AC%B8%EC%9E%90%EC%97%B4%20%EC%9C%84%EC%B9%98%20%EA%B5%AC%ED%95%98%EA%B8%B0)
+
+## 문자열 안의 문자 변경하기
+[포인터가 짱이야...!](https://github.com/yoonc01/codetree-TILs/tree/main/250216/a%EB%A1%9C%20%EC%B1%84%EC%9B%8C%EB%84%A3%EA%B8%B0)
