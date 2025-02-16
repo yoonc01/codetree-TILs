@@ -9,3 +9,17 @@
 
 ## 문자열 안의 문자 변경하기
 [포인터가 짱이야...!](https://github.com/yoonc01/codetree-TILs/tree/main/250216/a%EB%A1%9C%20%EC%B1%84%EC%9B%8C%EB%84%A3%EA%B8%B0)
+
+## 길이가 10인 문자열 만들기
+```c++
+string(10, ' ');
+```
+```java
+" ".repeat(10);
+```
+```js
+" ".repeat(10);
+```
+```python
+" " * 10;
+```
