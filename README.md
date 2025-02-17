@@ -34,7 +34,7 @@ string(10, ' ');
 ```
 
 ```js
-character.charCodeAt;
+character.charCodeAt(0);
 ```
 
 ```python
