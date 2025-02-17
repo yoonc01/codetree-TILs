@@ -24,7 +24,7 @@ string(10, ' ');
 " " * 10;
 ```
 
-## 아스키 코드 가져오기
+## 아스키 코드값 가져오기
 ```c++
 (int) character;
 ```
@@ -39,4 +39,21 @@ character.charCodeAt;
 
 ```python
 ord(character);
+```
+
+## 아스키 코드에 해당하는 문자 가져오기
+```c++
+(char) number;
+```
+
+```java
+(char) number;
+```
+
+```js
+String.fromCharCode(number);
+```
+
+```python
+chr(number);
 ```
