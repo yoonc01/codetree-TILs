@@ -23,3 +23,20 @@ string(10, ' ');
 ```python
 " " * 10;
 ```
+
+## 아스키 코드 가져오기
+```c++
+(int) character;
+```
+
+```java
+(int) character;
+```
+
+```js
+character.charCodeAt;
+```
+
+```python
+ord(character);
+```
