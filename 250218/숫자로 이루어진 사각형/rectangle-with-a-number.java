@@ -3,11 +3,11 @@ import java.io.*;
 
 public class Main {
     public static void printRect(StringBuilder sb, int n) {
-        int cnt = 0;
+        int cnt = 1;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                sb.append(cnt + 1).append(" ");
-                cnt = (cnt + 1) % 9;
+                sb.append(cnt).append(" ");
+                cnt = cnt % 9 + 1;
             }
             sb.append("\n");
         }
