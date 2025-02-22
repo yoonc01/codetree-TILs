@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const input = fs.readFileSync(0, "uft8").trim().split("\n");
+const input = fs.readFileSync(0, "utf8").trim().split("\n");
 
 function getNextLine(input) {
     let inputIdx = 0;
