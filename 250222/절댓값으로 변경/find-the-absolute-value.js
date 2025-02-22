@@ -12,7 +12,7 @@ function getNextLine(input) {
 const nextLine = getNextLine(input);
 
 const [n] = nextLine().map(Number);
-const arr = nextLine.map(Number);
+const arr = nextLine().map(Number);
 
 for (let i = 0; i < n; i++)
     arr[i] = Math.abs(arr[i]);
