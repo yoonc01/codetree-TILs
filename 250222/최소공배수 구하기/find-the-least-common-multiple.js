@@ -10,7 +10,7 @@ function gcd(a, b) {
 
 function lcm(a, b) {
     // javascript에서 몫을 구할 때는 Math.floor를 사용하는 것이 일반적임
-    return Math.floor(a * b / gcd);
+    return Math.floor(a * b / gcd(a, b));
 }
 
 console.log(lcm(a, b));
