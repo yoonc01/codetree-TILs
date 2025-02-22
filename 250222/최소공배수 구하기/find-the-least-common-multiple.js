@@ -9,7 +9,8 @@ function gcd(a, b) {
 }
 
 function lcm(a, b) {
-    return parseInt(a * b / gcd);
+    // javascript에서 몫을 구할 때는 Math.floor를 사용하는 것이 일반적임
+    return Math.floor(a * b / gcd);
 }
 
 console.log(lcm(a, b));
