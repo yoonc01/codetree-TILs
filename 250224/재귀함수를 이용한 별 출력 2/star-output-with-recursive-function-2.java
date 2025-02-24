@@ -11,9 +11,11 @@ public class Main {
             return;
         for (int i = 0; i < n; i++)
             sb.append("* ");
+        sb.append("\n");
         printStar(n - 1);
         for (int i = 0; i < n; i++)
             sb.append("* ");
+        sb.append("\n");
     }
 
     public static void main(String[] args) throws IOException {
