@@ -57,3 +57,5 @@ String.fromCharCode(number);
 ```python
 chr(number);
 ```
+## 대칭인 별 찍기
+[재귀 함수](https://github.com/yoonc01/codetree-TILs/tree/main/250224/%EC%9E%AC%EA%B7%80%ED%95%A8%EC%88%98%EC%9D%98%20%EA%BD%83)
