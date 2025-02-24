@@ -58,4 +58,4 @@ String.fromCharCode(number);
 chr(number);
 ```
 ## 대칭인 별 찍기
-[재귀 함수](https://github.com/yoonc01/codetree-TILs/tree/main/250224/%EC%9E%AC%EA%B7%80%ED%95%A8%EC%88%98%EC%9D%98%20%EA%BD%83)
+[재귀 함수](https://github.com/yoonc01/codetree-TILs/tree/main/250224/%EC%9E%AC%EA%B7%80%ED%95%A8%EC%88%98%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EB%B3%84%20%EC%B6%9C%EB%A0%A5%202)
