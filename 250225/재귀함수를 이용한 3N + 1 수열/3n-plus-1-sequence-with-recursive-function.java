@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-    static BufferedReader br = new BufferedReader(new InputStringReader(System.in));
+    static BufferedReader br = new BufferedReader(new InputSteamReader(System.in));
     static int n;
 
     static int count(int n) {
