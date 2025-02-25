@@ -9,7 +9,7 @@ public class Main {
         if (n < 10)
             return n * n;
         int digit = n % 10;
-        return getSquareTotal(n - 1) + digit * digit;
+        return getSquareTotal(n / 10) + digit * digit;
     }
 
     public static void main(String[] args) throws IOException {
