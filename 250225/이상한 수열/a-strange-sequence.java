@@ -13,7 +13,7 @@ public class Main {
         return seq(n / 3) + seq(n - 1);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         n = Integer.parseInt(br.readLine());
 
         System.out.println(seq(n));
