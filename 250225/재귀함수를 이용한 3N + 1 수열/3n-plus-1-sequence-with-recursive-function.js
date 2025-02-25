@@ -3,7 +3,7 @@ const fs = require("fs");
 const n = Number(fs.readFileSync(0, "utf8"));
 
 function count(n) {
-    if (n == 0)
+    if (n == 1)
         return 0;
     if (n % 2 == 0)
         return count(Math.floor(n / 2)) + 1;
