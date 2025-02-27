@@ -1,12 +1,12 @@
 n = int(input())
 
-dp = [0 for _ in range(n + 1)]
+dp = [0 for _ in range(1000)]
 dp[0] = 1
+dp[1] = 0
+dp[2] = 1
+dp[3] = 1
 
-for i in range(n + 1):
-    if i >= 2:
-        dp[i] = max(dp[i - 2], dp[i])
-    if i >= 3:
-        dp[i] = max(dp[i - 3] + dp[i - 2], dp[i])
+for i in range(4, n + 1):
+        dp[i] = (dp[i - 3] + dp[i - 2]) % 100007
 
-print(dp[n] % 10007)
+print(dp[n])
