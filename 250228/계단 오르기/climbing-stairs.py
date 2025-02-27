@@ -1,6 +1,6 @@
 n = int(input())
 
-dp = [0 for _ in range(1000)]
+dp = [0 for _ in range(1001)]
 dp[0] = 1
 dp[1] = 0
 dp[2] = 1
