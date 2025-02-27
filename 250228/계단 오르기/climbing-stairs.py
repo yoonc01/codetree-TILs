@@ -8,4 +8,4 @@ for i in range(n + 1):
     if i >= 3:
         dp[i] = max(dp[i - 3] + 1, dp[i])
 
-print(dp[n])
+print(dp[n] % 10007)
