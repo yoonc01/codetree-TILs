@@ -4,7 +4,7 @@ input = sys.stdin.readline
 
 n, m = map(int, input().split())
 G = [list(map(int, input().split())) for _ in range(n)]
-ans = 0
+ans = -1
 
 def check_all_positive(x, y, w, h):
     for i in range(h):
@@ -25,3 +25,4 @@ def findMax():
 
 findMax()
 print(ans)
+
