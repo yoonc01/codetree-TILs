@@ -19,6 +19,6 @@ init()
 
 for i in range(1, n):
     for j in range(1, n):
-        dp[i][j] = min(dp[i - 1][j], dp[i][j - 1])
+        dp[i][j] = min(max(dp[i - 1][j], dp[i][j - 1]), G[i][j])
 
-print(max(dp[n - 1][n - 2], dp[n - 2][n - 1]))
+print(dp[n - 1][n - 1])
