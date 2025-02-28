@@ -59,3 +59,6 @@ chr(number);
 ```
 ## 대칭인 별 찍기
 [재귀 함수](https://github.com/yoonc01/codetree-TILs/tree/main/250224/%EC%9E%AC%EA%B7%80%ED%95%A8%EC%88%98%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EB%B3%84%20%EC%B6%9C%EB%A0%A5%202)
+
+## DP에 초기값을 넣을 때 인덱스 에러 방지를 위해
+[예시 코드](https://github.com/yoonc01/codetree-TILs/blob/main/250228/%EA%B3%84%EB%8B%A8%20%EC%98%A4%EB%A5%B4%EA%B8%B0/climbing-stairs.py)
