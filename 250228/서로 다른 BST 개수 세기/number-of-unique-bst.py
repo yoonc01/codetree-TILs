@@ -10,6 +10,6 @@ dp[3] = 5
 for i in range(4, n + 1):
     dp[i] = 2 * dp[i - 1]
     for j in range(i - 2):
-        dp[i] = dp[i] + dp[i - 3 - j] + dp[j]
+        dp[i] = dp[i] + 2 * dp[i - 3 - j] + 2 * dp[j]
 
 print(dp[n])
