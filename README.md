@@ -62,3 +62,6 @@ chr(number);
 
 ## DP에 초기값을 넣을 때 인덱스 에러 방지를 위해
 [예시 코드](https://github.com/yoonc01/codetree-TILs/blob/main/250228/%EA%B3%84%EB%8B%A8%20%EC%98%A4%EB%A5%B4%EA%B8%B0/climbing-stairs.py)
+
+## DP 다시 풀어보기(DP에 대한 개념을 잡을 때 좋은 거 같음)
+[문제 내용](https://github.com/yoonc01/codetree-TILs/tree/main/250228/%EC%A0%95%EC%88%98%20%EC%82%AC%EA%B0%81%ED%98%95%20%EC%B5%9C%EC%86%9F%EA%B0%92%EC%9D%98%20%EC%B5%9C%EB%8C%80)
