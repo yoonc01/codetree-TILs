@@ -42,7 +42,7 @@ for i in range(1, n):
     paper_right[n - 1 - i] = paper_right[n - i] + get_score("H", B[n - 1 - i])
 
 ans = 0
-for i in range(0, n - 1):
+for i in range(1, n - 1):
     ans = max(ans, rock_left[i] + sciccer_right[i + 1])
     ans = max(ans, rock_left[i] + paper_right[i + 1])
     ans = max(ans, sciccer_left[i] + rock_right[i + 1])
