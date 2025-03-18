@@ -41,7 +41,7 @@ for i in range(1, n):
     sciccer_right[n - 1 - i] = sciccer_right[n - i] + get_score("S", B[n - 1 - i])
     paper_right[n - 1 - i] = paper_right[n - i] + get_score("P", B[n - 1 - i])
 
-ans = 0
+ans = max(rock_left[0], sciccer_left[0], paper_left[0])
 
 for i in range(n - 1):
     ans = max(ans, rock_left[i] + sciccer_right[i + 1])
