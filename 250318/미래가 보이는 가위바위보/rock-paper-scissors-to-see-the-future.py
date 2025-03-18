@@ -38,10 +38,17 @@ for i in range(1, n):
     paper_left[i] = paper_left[i - 1] + get_score("P", B[i])
     
     rock_right[n - 1 - i] = rock_right[n - i] + get_score("H", B[n - 1 - i])
-    sciccer_right[n - 1 - i] = sciccer_right[n - i] + get_score("H", B[n - 1 - i])
-    paper_right[n - 1 - i] = paper_right[n - i] + get_score("H", B[n - 1 - i])
+    sciccer_right[n - 1 - i] = sciccer_right[n - i] + get_score("S", B[n - 1 - i])
+    paper_right[n - 1 - i] = paper_right[n - i] + get_score("P", B[n - 1 - i])
 
 ans = 0
+print(rock_left)
+print(rock_right)
+print(sciccer_left)
+print(sciccer_right)
+print(paper_left)
+print(paper_right)
+
 for i in range(n - 1):
     ans = max(ans, rock_left[i] + sciccer_right[i + 1])
     ans = max(ans, rock_left[i] + paper_right[i + 1])
