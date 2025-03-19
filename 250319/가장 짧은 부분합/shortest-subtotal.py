@@ -9,8 +9,10 @@ for i in range(n):
         sum_val = sum_val + arr[j]
         j = j + 1
     
-    if (sum_val >= s):
-        ans = min(ans, j - i)
+    if (sum_val < s):
+        break
+
+    ans = min(ans, j - i)
     sum_val = sum_val - arr[i]
 
 print(ans if ans != n else -1)
